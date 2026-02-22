@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoothVote - Stem på din favoritt-stand!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BoothVote</h1>
+            <button id="back-btn" class="hidden">Tilbake</button>
+        </header>
+
+        <main id="main-content">
+            <!-- Seksjon for konferanser -->
+            <section id="conference-section">
+                <h2>Velg en konferanse</h2>
+                <ul id="conference-list" class="list-container">
+                    <!-- Dynamisk innhold -->
+                </ul>
+            </section>
+
+            <!-- Seksjon for stands i en konferanse -->
+            <section id="stand-section" class="hidden">
+                <h2 id="current-conference-name">Stands</h2>
+                <ul id="stand-list" class="list-container">
+                    <!-- Dynamisk innhold -->
+                </ul>
+            </section>
+
+            <!-- Seksjon for standdetaljer og stemmegiving -->
+            <section id="vote-section" class="hidden">
+                <div id="stand-details">
+                    <h2 id="current-stand-name">Stand Navn</h2>
+                    <p id="current-stand-info">Info om standen...</p>
+                    <img id="current-stand-image" src="" alt="Stand bilde" class="hidden">
+                </div>
+
+                <div id="vote-form-container">
+                    <h3>Gi din stemme</h3>
+                    <form id="vote-form">
+                        <input type="hidden" id="stand-id-input">
+                        <div class="rating-group">
+                            <label>Vurdering (1-5):</label>
+                            <div class="stars">
+                                <input type="radio" id="star5" name="rating" value="5" required /><label for="star5">5</label>
+                                <input type="radio" id="star4" name="rating" value="4" required /><label for="star4">4</label>
+                                <input type="radio" id="star3" name="rating" value="3" required /><label for="star3">3</label>
+                                <input type="radio" id="star2" name="rating" value="2" required /><label for="star2">2</label>
+                                <input type="radio" id="star1" name="rating" value="1" required /><label for="star1">1</label>
+                            </div>
+                        </div>
+                        <div class="feedback-group">
+                            <label for="feedback">Tilbakemelding (valgfritt):</label>
+                            <textarea id="feedback" name="feedback" rows="4" placeholder="Hva synes du om denne standen?"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send stemme</button>
+                    </form>
+                </div>
+            </section>
+
+            <section id="message-section" class="hidden">
+                <p id="status-message"></p>
+                <button id="ok-btn">OK</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
